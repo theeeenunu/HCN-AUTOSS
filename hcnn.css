@@ -1,0 +1,431 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* GENERAL HEADER SECTION */
+header {
+    background-color: #000000;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #d4af37; /* gold accent */
+    font-size: 28px;
+}
+
+.navbar a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    list-style: none;
+}
+.navbar li{
+    list-style: none;
+}
+
+.navbar a:hover {
+    color: #d4af37;
+}
+
+/*HOME PAGE CSS*/
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 130vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Background */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+/* Overlay Text */
+.overlay {
+    text-align: center;
+    padding: 60px;
+    border-radius: 10px;
+}
+
+.overlay h1 {
+    font-size: 60px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInDown 2s ease forwards;
+}
+
+.overlay p {
+    font-size: 22px;
+    opacity: 0;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s 0.5s ease forwards;
+}
+
+.cta-btn {
+    text-decoration: none;
+    background-color: #d4af37;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInUp 2s 1s ease forwards;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+
+
+/* ========== GRID LAYOUT ========== */
+.cars-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+    padding:60px;
+}
+
+/* ========== CAR CARD ========== */
+.car-card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:20px;
+    transition: all 0.5s ease;
+    position:relative;
+    overflow:hidden;
+    animation: fadeUp 1.5s ease;
+}
+
+.car-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:3px;
+    background:#d4af37;
+    transition:0.6s;
+}
+
+.car-card:hover::before{
+    left:0;
+}
+
+.car-card:hover{
+    transform:translateY(-15px) scale(1.03);
+    box-shadow:0 20px 40px rgba(212,175,55,0.3);
+}
+
+.car-card img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:20px;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover img{
+    transform:scale(1.08);
+}
+
+/* TEXT */
+.car-card h2{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.specs{
+    font-size:14px;
+    color:#bbb;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+.car-card button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#d4af37;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:8px;
+    transition: all 0.3s ease;
+}
+
+.car-card button:hover{
+    background:#fff;
+    color:#000;
+    letter-spacing:1px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+    header h1{
+        font-size:35px;
+    }
+    .cars-container{
+        padding:30px;
+    }
+}
+
+
+
+
+
+
+/* ABOUT CSS*/
+
+.about-body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+/* HERO */
+.about-hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #000;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    color: #d4af37;
+}
+
+.about-hero p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* MY SECTIONS */
+
+.process {
+    padding: 80px 10%;
+    text-align: center;
+}
+.why {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+
+/* CARDS */
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    background: #1a1a1a;
+    padding: 30px;
+    width: 280px;
+    border-radius: 10px;
+    border: 1px solid #222;
+}
+
+.card.small {
+    width: 200px;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #000;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.stat h2 {
+    color: #d4af37;
+    font-size: 36px;
+}
+
+.stat p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+ /* SERVICES PAGE */
+
+.services-hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.services-hero h1 {
+    font-size: 50px;
+    color: #d4af37;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 60px 10%;
+}
+
+.service-card {
+    background: #1a1a1a;
+    padding: 30px;
+    width: 260px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(212,175,55,0.4);
+}
+
+.service-card h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+/* CONTACT PAGE*/
+
+body {
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-hero h1 {
+    font-size: 50px;
+    color: #d4af37;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+}
+
+.contact-info h3 {
+    color: #d4af37;
+    margin-top: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+}
+
+.contact-form button {
+    background-color: #d4af37;
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #bfa238;
+}
+
+/* Footer */
+
+
+.footer-bottom {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px 10%;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
